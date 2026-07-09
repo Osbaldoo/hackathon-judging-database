@@ -1,0 +1,41 @@
+﻿Hackathon Judging Database - Project Notes
+-This project is a database design for a hackathon judging system. The database stores projects, judges, scoring criteria, evaluations, and scores.
+ The goal is to use the scores to calculate the top projects.
+
+Tables
+-Project
+ Stores each hackathon project.
+-Judge
+ Stores the judges.
+-Criteria
+ Stores the scoring categories used to judge each project.
+-Evaluation
+ Connects a judge to a project.
+-Score
+ Stores the score a judge gives for each criteria.
+
+Fields
+-project_name
+-description
+-demo_url
+-source_code_url
+-judge_name
+-is_senior
+-criteria_name
+-max_score
+-score_value
+
+Data Notes
+-The Criteria table stores scoring categories that can be reused. This data does not change often.
+
+Not Stored Directly
+-winners
+ This should be calculated with a query instead of stored directly.
+-ranking
+ This should be calculated later using the project scores.
+-judging_decision
+ This comes from the scores, so it does not need its own table.
+
+Notes
+-Some of the data was not given in the assignment for example the scores. I created the Score table so I could store how each
+ judge scored each project based on the criteria. This was needed to calculate the final top three winners.
